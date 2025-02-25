@@ -48,4 +48,14 @@ public class EmployeeController {
         employeeService.deleteEmployee(id);
         return ResponseEntity.ok("Employee deleted");
     }
+    @DeleteMapping("/git/{id}")
+    public ResponseEntity<String> deleteEmployee1(@PathVariable Long id) {
+        employeeService.deleteEmployee(id);
+        return ResponseEntity.ok("Employee deleted");
+    }
+    @DeleteMapping("/git2/{id}")
+    public ResponseEntity<String> deleteEmployee21(@PathVariable Long id) {
+        employeeService.deleteEmployee(id);
+        return ResponseEntity.ok("Employee deleted");
+    }
 }
