@@ -38,6 +38,13 @@ public class EmployeeService {
                 () -> new AppException(ErrorCode.USER_NOT_EXISTED)
         );
         employeeMapper.updateEmployee(employee, employeeRequest);
-
+        employeeRepository.save(employee);
+        return employeeMapper.toEmployeeResponse(employee);
+    }
+    public void deleteEmployee(Long employeeId){
+        Employee employee = employeeRepository.findById(employeeId).orElseThrow(
+                () -> new AppException(ErrorCode.USER_NOT_EXISTED)
+        );
+        employeeRepository.deleteById(employeeId);
     }
 }
